@@ -1,0 +1,965 @@
+﻿<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AVA | آموزش هوشمند</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     LOGIN
+     ===================================================== -->
+
+<div
+    id="loginPanel"
+    class="login-screen"
+>
+
+    <div class="login-card">
+
+        <div class="login-brand">
+
+            <img
+                src="logo.png"
+                alt="AVA"
+                class="login-logo"
+            >
+
+            <div>
+
+                <div class="brand-name">
+                    AVA
+                </div>
+
+                <div class="brand-caption">
+                    آموزش هوشمند
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="login-heading">
+
+            <span class="eyebrow">
+                ورود به سامانه
+            </span>
+
+            <h1>
+                خوش آمدید
+            </h1>
+
+            <p>
+                برای ادامه، نام کاربری و رمز عبور خود را وارد کنید.
+            </p>
+
+        </div>
+
+
+        <div class="login-form">
+
+            <div class="field">
+
+                <label for="username">
+                    نام کاربری
+                </label>
+
+                <input
+                    id="username"
+                    type="text"
+                    placeholder="نام کاربری"
+                    autocomplete="username"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="password">
+                    رمز عبور
+                </label>
+
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="رمز عبور"
+                    autocomplete="current-password"
+                >
+
+            </div>
+
+
+            <button
+                id="loginButton"
+                class="primary-button"
+            >
+                ورود
+            </button>
+
+
+            <div
+                id="loginStatus"
+                class="login-status"
+            ></div>
+
+            <button
+                id="showRegisterButton"
+                class="ghost-button"
+                type="button"
+            >
+                ثبت‌نام
+            </button>
+
+        </div>
+
+        <div
+            id="registerPanel"
+            class="register-panel hidden"
+        >
+
+            <div class="login-heading">
+
+                <span class="eyebrow">
+                    عضویت در سامانه
+                </span>
+
+                <h2>
+                    ثبت‌نام
+                </h2>
+
+                <p>
+                    نوع حساب خود را انتخاب کنید.
+                </p>
+
+            </div>
+
+            <div class="field">
+
+                <label for="registerUserType">
+                    نوع کاربر
+                </label>
+
+                <select id="registerUserType">
+
+                    <option value="student">
+                        هنرجو
+                    </option>
+
+                    <option value="teacher">
+                        استاد
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="field">
+
+                <label for="registerName">
+                    نام
+                </label>
+
+                <input
+                    id="registerName"
+                    type="text"
+                    placeholder="نام و نام خانوادگی"
+                >
+
+            </div>
+
+            <div class="field">
+
+                <label for="registerNationalCode">
+                    کد ملی
+                </label>
+
+                <input
+                    id="registerNationalCode"
+                    type="text"
+                    inputmode="numeric"
+                    maxlength="10"
+                    placeholder="کد ملی ۱۰ رقمی"
+                >
+
+            </div>
+
+            <div
+                id="studentRegisterFields"
+            >
+
+                <div class="field">
+
+                    <label for="registerLevel">
+                        سطح
+                    </label>
+
+                    <select id="registerLevel">
+
+                        <option value="مقدماتی">
+                            مقدماتی
+                        </option>
+
+                        <option value="متوسط">
+                            متوسط
+                        </option>
+
+                        <option value="پیشرفته">
+                            پیشرفته
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <button
+                id="registerButton"
+                class="primary-button"
+                type="button"
+            >
+                ارسال درخواست ثبت‌نام
+            </button>
+
+            <button
+                id="backToLoginButton"
+                class="ghost-button"
+                type="button"
+            >
+                بازگشت به ورود
+            </button>
+
+            <div
+                id="registerStatus"
+                class="login-status"
+            ></div>
+
+        </div>
+
+
+        <div class="login-footer">
+
+            <span>
+                AVA
+            </span>
+
+            <span>
+                •
+            </span>
+
+            <span>
+                سیستم آموزش هوشمند
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TEACHER
+     ===================================================== -->
+
+<div
+    id="teacherPanel"
+    class="app-view hidden"
+>
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a
+                href="#"
+                class="site-brand"
+            >
+
+                <img
+                    src="logo.png"
+                    alt="AVA"
+                >
+
+                <div>
+
+                    <strong>
+                        AVA
+                    </strong>
+
+                    <span>
+                        آموزش هوشمند
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <div class="header-role">
+                پنل استاد
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <section class="welcome-section">
+
+            <div>
+
+                <span class="eyebrow">
+                    داشبورد استاد
+                </span>
+
+                <h1>
+                    مدیریت آموزش
+                </h1>
+
+                <p>
+                    درس‌ها و محتوای آموزشی خود را مدیریت کنید.
+                </p>
+
+            </div>
+
+
+            <div
+                id="teacherInfo"
+                class="profile-card"
+            ></div>
+
+        </section>
+
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-kicker">
+                        تنظیمات
+                    </span>
+
+                    <h2>
+                        Prompt اختصاصی استاد
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <div class="field">
+
+                    <label for="teacherPrompt">
+                        Prompt استاد
+                    </label>
+
+                    <textarea
+                        id="teacherPrompt"
+                        placeholder="Prompt اختصاصی استاد را وارد کنید..."
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    id="saveTeacherPromptButton"
+                    class="primary-button"
+                >
+                    ذخیره Prompt
+                </button>
+
+
+                <div
+                    id="teacherPromptStatus"
+                    class="save-status"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-kicker">
+                        ایجاد محتوا
+                    </span>
+
+                    <h2>
+                        ساخت درس جدید
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <div class="field">
+
+                    <label for="lessonName">
+                        نام درس
+                    </label>
+
+                    <input
+                        id="lessonName"
+                        type="text"
+                        placeholder="مثلاً: مقدمه گیتار"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="lessonContent">
+                        محتوای درس
+                    </label>
+
+                    <textarea
+                        id="lessonContent"
+                        placeholder="متن کامل محتوای درس را وارد کنید..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="lessonNoteFile">
+                        نوت درس
+                    </label>
+
+                    <input
+                        id="lessonNoteFile"
+                        type="file"
+                        accept="application/pdf"
+                    >
+
+                    <div
+                        id="lessonNoteInfo"
+                        class="field-hint"
+                    >
+                        فایل PDF اختیاری است.
+                    </div>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        id="createLessonButton"
+                        class="primary-button"
+                    >
+                        ساخت درس
+                    </button>
+
+                    <button
+                        id="saveLessonEditButton"
+                        class="secondary-button hidden"
+                    >
+                        ذخیره ویرایش
+                    </button>
+
+                    <button
+                        id="cancelLessonEditButton"
+                        class="ghost-button hidden"
+                    >
+                        انصراف
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="lessonCreateStatus"
+                    class="save-status"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-kicker">
+                        محتوا
+                    </span>
+
+                    <h2>
+                        درس‌های من
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="lessonsList"
+                class="lessons-grid"
+            ></div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<!-- =====================================================
+     ADMIN
+     ===================================================== -->
+
+<div
+    id="adminPanel"
+    class="app-view hidden"
+>
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a
+                href="#"
+                class="site-brand"
+            >
+
+                <img
+                    src="logo.png"
+                    alt="AVA"
+                >
+
+                <div>
+
+                    <strong>
+                        AVA
+                    </strong>
+
+                    <span>
+                        آموزش هوشمند
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <div class="header-role">
+                پنل مدیر
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="dashboard">
+
+
+        <!-- =================================================
+             WELCOME
+             ================================================= -->
+
+        <section class="welcome-section">
+
+            <div>
+
+                <span class="eyebrow">
+                    داشبورد مدیریت
+                </span>
+
+                <h1>
+                    مدیریت سیستم
+                </h1>
+
+                <p>
+                    درخواست‌های ثبت‌نام و تنظیمات آوا را مدیریت کنید.
+                </p>
+
+            </div>
+
+
+            <div
+                id="adminInfo"
+                class="profile-card"
+            ></div>
+
+        </section>
+
+
+        <!-- =================================================
+             REGISTRATION REQUESTS
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-kicker">
+                        مدیریت کاربران
+                    </span>
+
+                    <h2>
+                        درخواست‌های ثبت‌نام
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="registrationRequestsList"
+                class="lessons-grid"
+            ></div>
+
+        </section>
+        <!-- =================================================
+             USER MANAGEMENT
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-kicker">
+                        مدیریت کاربران
+                    </span>
+
+                    <h2>
+                        استادها و هنرجوها
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="adminUsersList"
+                class="lessons-grid"
+            ></div>
+
+        </section>
+
+
+
+
+        <!-- =================================================
+             AVA SYSTEM PROMPT
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-kicker">
+                        تنظیمات آوا
+                    </span>
+
+                    <h2>
+                        System Prompt آوا
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <div class="field">
+
+                    <label for="adminPrompt">
+                        System Prompt
+                    </label>
+
+                    <textarea
+                        id="adminPrompt"
+                        placeholder="System Prompt اصلی آوا را وارد کنید..."
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    id="saveAdminPromptButton"
+                    class="primary-button"
+                    type="button"
+                >
+                    ذخیره System Prompt
+                </button>
+
+
+                <div
+                    id="adminPromptStatus"
+                    class="save-status"
+                ></div>
+
+            </div>
+
+        </section>
+<!-- =================================================
+     AVA MODEL SELECTION
+     ================================================= -->
+
+<section class="dashboard-section">
+
+    <div class="section-heading">
+        <div>
+            <span class="section-kicker">تنظیمات آوا</span>
+            <h2>انتخاب مدل آوا</h2>
+        </div>
+    </div>
+
+    <div class="content-card">
+
+        <div class="field">
+            <label for="avaTextModel">مدل متنی آوا</label>
+            <select id="avaTextModel">
+                <option value="">انتخاب مدل متنی</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="avaVoiceModel">مدل صوتی آوا</label>
+            <select id="avaVoiceModel">
+                <option value="">انتخاب مدل صوتی</option>
+            </select>
+        </div>
+
+        <button id="saveAvaModelsButton" class="primary-button" type="button">
+            ذخیره انتخاب مدل‌ها
+        </button>
+
+        <div id="avaModelsStatus" class="save-status"></div>
+
+    </div>
+
+</section>
+
+    </main>
+
+</div>
+
+<!-- =====================================================
+     STUDENT
+     ===================================================== -->
+
+<div
+    id="studentPanel"
+    class="app-view hidden"
+>
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a
+                href="#"
+                class="site-brand"
+            >
+
+                <img
+                    src="logo.png"
+                    alt="AVA"
+                >
+
+                <div>
+
+                    <strong>
+                        AVA
+                    </strong>
+
+                    <span>
+                        آموزش هوشمند
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <div class="header-role">
+                پنل شاگرد
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <section class="welcome-section">
+
+            <div>
+
+                <span class="eyebrow">
+                    فضای یادگیری
+                </span>
+
+                <h1>
+                    ادامه یادگیری
+                </h1>
+
+                <p>
+                    درس خود را انتخاب کنید و یادگیری را شروع کنید.
+                </p>
+
+            </div>
+
+
+            <div
+                id="studentInfo"
+                class="profile-card"
+            ></div>
+
+        </section>
+
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-kicker">
+                        آموزش
+                    </span>
+
+                    <h2>
+                        درس‌های من
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="studentLessonsList"
+                class="lessons-grid"
+            ></div>
+
+        </section>
+
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-kicker">
+                        درس فعال
+                    </span>
+
+                    <h2>
+                        محتوای درس
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="studentLessonOutput"
+                class="lesson-output"
+            >
+                <div class="empty-state">
+
+                    <div class="empty-state-icon">
+                        AVA
+                    </div>
+
+                    <h3>
+                        هنوز درسی شروع نشده است
+                    </h3>
+
+                    <p>
+                        برای شروع، یکی از درس‌های بالا را انتخاب کنید.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="js/app.js"></script>
+
+<script src="js/admin.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script src="js/teacher.js"></script>
+
+<script src="js/student.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
